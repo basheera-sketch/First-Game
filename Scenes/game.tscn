@@ -175,6 +175,9 @@ texture = ExtResource("2_wrm1d")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3dryh")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w58vg"]
+distance = -0.42214966
+
 [node name="Game" type="Node2D" unique_id=264085087]
 
 [node name="Level 1" parent="." unique_id=2094368709 instance=ExtResource("1_qxrlw")]
@@ -185,3 +188,18 @@ tile_set = SubResource("TileSet_ph2yt")
 
 [node name="Test_Player" parent="Level 1" unique_id=961237488 instance=ExtResource("3_wrm1d")]
 position = Vector2(-197, -27.000004)
+
+[node name="Bottom Boundary" type="StaticBody2D" parent="." unique_id=1948608064]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Boundary" unique_id=659696118]
+position = Vector2(0, 392)
+shape = SubResource("WorldBoundaryShape2D_w58vg")
+
+[node name="left boundry" type="StaticBody2D" parent="." unique_id=300940693]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left boundry" unique_id=2040236917]
+position = Vector2(-214, -81)
+rotation = 1.5772911
+shape = SubResource("WorldBoundaryShape2D_w58vg")
